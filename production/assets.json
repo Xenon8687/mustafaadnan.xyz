@@ -1,0 +1,9 @@
+[
+  "src/discord/config.json",
+  "src/discord/main.js",
+  "src/public/images/*",
+  "src/public/index_template.html",
+  "src/public/Homepage.css",
+  "src/server/routes/*",
+  "src/server/server.js"
+]

@@ -1,0 +1,162 @@
+@keyframes fadein {
+  from { opacity: 0; position: relative; left: -25px; }
+  to   { opacity: 1; position: relative; left: 0px; }
+}
+.sa {
+  animation: fadein 1s;
+}
+
+#avatar {
+  float: right;
+  display: inline-block;
+}
+.seperator img {
+  display: block;
+}
+.seperator img {
+  display: none;
+}
+@media screen and (min-width: 930px) {
+  .parentThing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    width: 100%;
+    height: 100%;
+  }
+  .thing {
+    text-align: center;
+    cursor: pointer;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .thing1 {
+    grid-area: 1 / 1 / 2 / 2;
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/Node.jsLogo.jpg');
+    background-color: rgba(31, 15, 55);
+    background-size: 186.48px 105.36px;
+  }
+  .thing2 {
+    grid-area: 1 / 2 / 2 / 3;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/ReactBackground.jpg');
+    background-size: 476.48px 375.36px;
+  }
+  .thing3 {
+    grid-area: 1 / 3 / 2 / 4;
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/MaterialUiLogo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 76.48px 75.36px;
+  }
+  .thing4 {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: rgba(31, 15, 55);
+  }
+  .thing5 {
+    grid-area: 2 / 2 / 3 / 3;
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/Socket.IOLogo.png');
+    background-color: rgba(31, 15, 55);
+    background-size: 76.48px 75.36px;
+  }
+  .thing6 {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: rgba(31, 15, 55);
+  }
+  .thing7 {
+    grid-area: 3 / 1 / 4 / 2;
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/CPPLogo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+  .thing8 {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+  .thing9 {
+    grid-area: 3 / 3 / 4 / 4;
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/AdobePhotoshop2020Logo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+}
+@media screen and (max-width: 931px) {
+  #avatar {
+    float: left;
+    display: block;
+    width: 100% !important;
+  }
+  #avatar img {
+    width: 100% !important;
+  }
+  #avatar button {
+    left: 50% !important;
+    bottom: 24px !important;
+    transform: translate(-50%);
+  }
+  #Cnt {
+    max-width: 100%;
+  }
+  .seperator img {
+    display: none;
+  }
+  .seperator hr {
+    display: block;
+  }
+  .parentThing {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .thing {
+    text-align: center;
+    cursor: pointer;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .thing1 {
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/Node.jsLogo.jpg');
+    background-color: rgba(31, 15, 55);
+    background-size: 186.48px 105.36px;
+  }
+  .thing2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/ReactBackground.jpg');
+  }
+  .thing3 {
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/MaterialUiLogo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 76.48px 75.36px;
+  }
+  .thing4 {
+    background-color: rgba(31, 15, 55);
+  }
+  .thing5 {
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/Socket.IOLogo.png');
+    background-color: rgba(31, 15, 55);
+    background-size: 76.48px 75.36px;
+  }
+  .thing6 {
+    background-color: rgba(31, 15, 55);
+  }
+  .thing7 {
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/CPPLogo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+  .thing8 {
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+  .thing9 {
+    background-image: linear-gradient(rgba(31, 15, 55, 0.7), rgba(31, 15, 55, 0.7)), url('/images/AdobePhotoshop2020Logo.svg');
+    background-color: rgba(31, 15, 55);
+    background-size: 116.48px 115.36px;
+  }
+}
