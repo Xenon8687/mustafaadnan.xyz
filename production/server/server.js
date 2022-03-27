@@ -1,11 +1,12 @@
-import express from 'express';
-import path from 'path';
-import io, { Server } from 'socket.io';
-import http from 'http';
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import indexRouter from "./routes/index";
-import authorRouter from "./routes/author";
+const express =  require('express');
+const path =  require('path');
+const { Server } =  require('socket.io');
+const io =  require('socket.io');
+const http =  require('http');
+const bodyParser =  require('body-parser');
+const cookieParser =  require('cookie-parser');
+const indexRouter =  require("./routes/index");
+const authorRouter =  require("./routes/author");
 
 var app = express();
 var server = http.createServer(app);

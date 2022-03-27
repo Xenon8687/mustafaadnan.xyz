@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx nodemon --exec babel-node ./index.js",
     "production:generate": "babel-node ./production/generateProduction.js",
-    "start": "babel-node ./production/server/server.js"
+    "start": "node ./production/server/server.js"
   },
   "keywords": [],
   "author": "",
