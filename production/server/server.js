@@ -28,7 +28,7 @@ async function emitStatus(data) {
 app.use("/api/v1/author", authorRouter);
 app.use("/*", indexRouter);
 
-server.listen(3000, async () => {
+server.listen(process.env.PORT || 3000, async () => {
   global.discord = require('../discord/main')(emitStatus);
 });
 
