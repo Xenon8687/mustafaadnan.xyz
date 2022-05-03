@@ -1,6 +1,6 @@
 import { spawn } from 'child_process';
 
-const child = spawn('webpack', ['--watch', '--mode=development'], {shell: true});
+const child = spawn('webpack', ['--mode=development','--watch'], {shell: true});
 var c = false;
 child.stdout.on('data', (chunk) => {
   console.log(chunk.toString());

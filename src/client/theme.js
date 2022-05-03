@@ -1,50 +1,7 @@
 import React, { Component, useState } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Cookies from 'universal-cookie';
-import CssBaseline from '@mui/material/CssBaseline'
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const cookies = new Cookies();
-
-const lightTheme = createTheme({
-  palette: {
-    background: {
-      default: "#FFFFFF"
-    },
-    text: {
-      primary: "#000000"
-    }
-  },
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Poppins"',
-      'Roboto',
-      'Arial',
-    ].join(',')
-  }
-});
-const darkTheme = createTheme({
-  palette: {
-    background: {
-      default: "#222222"
-    },
-    text: {
-      primary: "#ffffff"
-    }
-  },
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Poppins"',
-      'Roboto',
-      'Arial',
-    ].join(','),
-  }
-});
 
 const ThemeContext = React.createContext({
   theme: cookies.get('theme'),
@@ -54,8 +11,9 @@ const ThemeContext = React.createContext({
 class Provider extends React.Component {
   constructor(props) {
     super(props);
-    if(typeof cookies.get('theme') === 'undefined') cookies.set('theme', 'light');
+    if(typeof cookies.get('theme') === 'undefined') cookies.set('theme', 'dark');
     this.setTheme = () => {
+      console.log('sa');
       this.setState(state => ({
         theme: state.theme === 'light' ? 'dark' : 'light'
       }));
@@ -65,16 +23,15 @@ class Provider extends React.Component {
       theme: cookies.get('theme'),
       setTheme: this.setTheme
     };
-    React.Component.getThemeProp = () => {return (this.state.theme === 'light' ? lightTheme : darkTheme)};
   }
   render() {
     return (
       <ThemeContext.Provider value={this.state}>
-        <ThemeProvider theme={this.state.theme === 'light' ? lightTheme : darkTheme}>
-          <CssBaseline />
-          <ThemeButton />
+        <div className={"theme " + this.state.theme}>
+          <ThemeButton/>
+          <div className="bg"></div>
           {this.props.children}
-        </ThemeProvider>
+        </div>
       </ThemeContext.Provider>
     )
   }
@@ -85,12 +42,14 @@ class ThemeButton extends Component {
     return (
       <ThemeContext.Consumer>
         {({theme, setTheme}) => (
-          <button style={{position: 'fixed', bottom: 32, right: 32, background: theme === 'light' ? darkTheme.palette.background.default : lightTheme.palette.background.default, color: theme === 'light' ? darkTheme.palette.text.primary : lightTheme.palette.text.primary, border: 'none', padding: '3px 5px 2px 4px', borderRadius: '32px', width: 56, height: 56, cursor: 'pointer'}} onClick={setTheme}>
-            {(() => theme === 'light' ? <DarkModeIcon style={{ fontSize: 38 }}/> : <LightModeIcon style={{ fontSize: 38 }}/>)()}
+          <button id="changeTheme" onClick={setTheme} style={{overflow: 'hidden'}}>
+            {(() => theme === 'light' ? 
+            <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DarkModeIcon" style={{fontSize: 38}}><path style={{fill: "white"}} d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg> : 
+            <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LightModeIcon" style={{fontSize: 38}}><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"></path></svg>)()}
           </button>
         )}
       </ThemeContext.Consumer>
     )
   }
 }
-export { Provider, ThemeButton, ThemeContext, lightTheme, darkTheme }
+export { Provider, ThemeButton, ThemeContext }

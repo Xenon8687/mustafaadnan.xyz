@@ -1,0 +1,77 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", Roboto, Arial;
+}
+img {
+  width: auto;
+}
+body {
+  margin: 0;
+}
+#changeTheme {
+  border: none; 
+  padding: 3px 5px 2px 4px;
+  border-radius: 32px;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+.theme.dark {
+  #changeTheme {
+    background: #fff;
+    color: #222;
+  }
+  background: #222;
+  color: #fff;
+  padding: 8px
+  ;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #222;
+    z-index: -1;
+  }
+  #loader {
+    background: #222;
+  }
+  .post {
+    color: #000000;
+    background-color: #f1f1f1; 
+  }
+}
+.theme.light {
+  #changeTheme {
+    background: #222;
+    color: #fff;
+  }
+  background: #fff;
+  color: #222;
+  padding: 8px;
+  .post {
+    color: #FFFFFF;
+    background-color: #161616;
+  }
+}
+.Container {
+  width: 100%;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+}
+@media (min-width: 1200px) {
+  .Container {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 600px) {
+  .Container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

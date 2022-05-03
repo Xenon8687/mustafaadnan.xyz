@@ -1,0 +1,106 @@
+.navbar {
+  padding: 0 12px 0 12px;
+  display: flex;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    margin-left: auto;
+    display: inline-block;
+    li {
+      display: inline-block;
+      margin: 0 8px;
+      cursor: pointer;
+      input[type="text"] {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+        outline: none;
+      }
+      .go {
+        background-color: #4CAF50;
+        border: none;
+        cursor: pointer;
+        margin-left: 3px;
+        border-radius: 4px;
+        transition: background-color 0.5s;
+        text-decoration: none;
+        color: #fff;
+        padding: 2px 4px;
+      }
+      .go:hover {
+        background-color: #378500;
+      }
+    }
+  }
+  .navbarToggle {
+    display: none;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .navbar {
+    display: block;
+    .navbarToggle {
+      font-weight: bold;
+      display: inline-block;
+      font-weight: bold;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+    }
+    .navbarToggle::after {
+      content: "≡";
+      font-size: 32px;
+    }
+    ul {
+      opacity: 1;
+      margin: 0;
+      max-height: 0;
+      display: block;
+      margin-left: 0;
+      background: #fff;
+      li {
+        display: block;
+        text-align: center;
+        padding: 8px;
+        display: none;
+      }
+    }
+  }
+  .navbar.active {
+    .navbarToggle::after {
+      content: "X";
+    }
+    ul {
+      max-height: 100%;
+      li {
+        display: block;
+      }
+    }
+  }
+  .theme.dark {
+    ul {
+      background: #222;
+    }
+  }
+}
+.theme.dark {
+  .navbar {
+    input {
+      color: white !important;
+    }
+  }
+  .navbar {
+    a {
+      color: white !important;
+    }
+  }
+}
+.theme.white {
+  .navbar {
+    input {
+      color: black;
+    }
+  }
+}

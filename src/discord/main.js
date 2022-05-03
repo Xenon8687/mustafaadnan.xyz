@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
-const config = require('./config.json');
+const { discord } = require('../config.json');
 
 var isReady = false;
+var config = discord;
 
 module.exports = async function(emitStatus) {
   const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_WEBHOOKS", "GUILD_PRESENCES"] });

@@ -1,0 +1,21 @@
+{
+  "general": {
+    "domain": "mustafaadnan.xyz"
+  },
+  "discord": {
+    "token": "",
+    "authorID": ""
+  },
+  "mysql": {
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": ""
+  },
+  "admins": [
+    {
+      "user": "",
+      "pass": ""
+    }
+  ]
+}

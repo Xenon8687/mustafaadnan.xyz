@@ -1,0 +1,6 @@
+node_modules
+node-v16.14.2-linux-x64.tar.xz
+PostConstructor.png
+production/*
+node_modules.tar.gz
+production
