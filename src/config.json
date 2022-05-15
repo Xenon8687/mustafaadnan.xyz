@@ -4,19 +4,19 @@
     "domain": "mustafaadnan.xyz"
   },
   "discord": {
-    "token": "OTQ5MDY0Mjk2NTg1OTEyMzIx.GkJELA.ALYhiFv_OSOFv2Kgu-QRDYFIKnLC1CGtk0zIO8",
-    "authorID": "459658370434203650"
+    "token": "",
+    "authorID": ""
   },
   "mysql": {
-    "host": "185.114.23.137",
-    "user": "mustafaadnanxyz",
-    "password": "921836UHzy",
-    "database": "mustafaadnanxyz"
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": ""
   },
   "admins": [
     {
-      "user": "root",
-      "pass": "^>esMN3H}*>!@KJR"
+      "user": "",
+      "pass": ""
     }
   ]
 }
