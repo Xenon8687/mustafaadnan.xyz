@@ -1,16 +1,16 @@
-import express from 'express';
-import mysql from 'mysql2/promise';
-import util from 'util';
-import path from 'path';
-import io, { Server } from 'socket.io';
-import http from 'http';
-import session from 'cookie-session';  
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import indexRouter from "./routes/index";
-import authorRouter from "./routes/author";
-import blogRouter from './routes/blog';
-import config from '../config.json';
+const express =  require('express');
+const mysql =  require('mysql2/promise');
+const util =  require('util');
+const path =  require('path');
+const { Server } =  require('socket.io');
+const http =  require('http');
+const session =  require('cookie-session');
+const bodyParser =  require('body-parser');
+const cookieParser =  require('cookie-parser');
+const indexRouter =  require("./routes/index");
+const authorRouter =  require("./routes/author");
+const blogRouter =  require('./routes/blog');
+const config =  require('../config.json');
 
 module.exports = async function() {
 var app = express();
@@ -73,4 +73,7 @@ socket.on("connection", async socket => {
     total--;
   });
 });
+setTimeout(function() {
+  process.exit();
+}, 86400000);
 }

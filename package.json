@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon --config ./nodemon.json --exec babel-node ./index.js",
-    "production:generate": "babel-node ./production/generateProduction.js",
-    "start": "node ./production/server/server.js"
+    "dev": "npx nodemon --config ./nodemon.json --exec babel-node ./indexDev.js",
+    "production:generate": "babel-node ./src/generateProduction.js",
+    "kill": "pm2 delete index",
+    "start": "npm run production:generate &&  pm2 start ./index.js"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
     "discord.js": "^13.6.0",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "forever": "^4.0.3",
     "html-loader": "^3.1.0",
     "multer": "^1.4.4",
     "mysql": "^2.18.1",

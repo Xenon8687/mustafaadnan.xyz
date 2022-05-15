@@ -1,4 +1,4 @@
-There is no option for production ❗ Use Node 16.x
+There is option for production now ❗ Use Node 16.x
 
 + Html webpack plugin
 + Sass loader

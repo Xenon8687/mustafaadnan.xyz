@@ -11,7 +11,7 @@ module.exports = async function(emitStatus) {
       return "unknown";
     }
     var data = (await client.guilds.cache.first().members.fetch()).get(config.authorID);
-    if(data.presence.status === "dnd") {
+    if((data.presence && data.presence.status && data.presence.status === "dnd") || !data.presence) {
       return {presence: {
         status: 'offline',
         activities: []

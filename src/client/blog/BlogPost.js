@@ -21,7 +21,7 @@ class BlogPost extends Component {
   }
   getPost() {
     console.log(typeof this.props.postId);
-    var req = axios.get('/api/v1/blog/post', {params: {id: this.props.postId.split('_')[this.props.postId.split('_').length]}});
+    var req = axios.get('/api/v1/blog/post', {params: {id: this.props.postId.split('_')[this.props.postId.split('_').length - 1]}});
     req.then((response) => {
       this.setState({
         post: response.data[0]

@@ -6,7 +6,7 @@ class Status extends Component {
   }
   render() {
     const { presence } = this.props;
-    if(presence.activities.length !== 0) {
+    if(presence && presence.activities.length !== 0) {
       return <p style={{color: '#999999', maxWidth: 600}}><i apply={""}>{
         presence.activities.map((x, i) => {
           if(x.name === 'YouTube') {

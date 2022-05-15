@@ -43,7 +43,7 @@ class HomePage extends React.Component {
     this._isMounted = false;
   }
   Continue() {
-    var cn = document.getElementById('Cnt').children;
+    var cn = document.getElementsByClassName('Container')[0].children;
     var cns = [];
     function findAll(c, arr) {
       for(var i = 0;i<c.length;i++) {
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
           if(c[i].hasAttribute('apply')) cns.push(c[i]);
           findAll(c[i].children, arr);
         }else {
-          if(!c[i].hasAttribute('skip') /*&& !['SVG', 'DEFS', 'RECT', 'POLYGON', 'LINEARGRADIENT', 'ELLIPSE', 'TEXT', 'PATH'].includes(c[i].tagName)*/) cns.push(c[i]);
+          if(!c[i].hasAttribute('skip') && !['SVG', 'DEFS', 'RECT', 'POLYGON', 'LINEARGRADIENT', 'ELLIPSE', 'TEXT', 'PATH'].includes(c[i].tagName)) cns.push(c[i]);
         }
       }
     }
@@ -75,7 +75,7 @@ class HomePage extends React.Component {
         <div className="Container">
           <div skip={""} id="avatar">
               <img skip={""} style={{width: 230, verticalAlign: "bottom"}} src="/images/Avatar.png"/>
-              <button skip={""} style={{width: 32, height: 32, display: 'inline-block', background: presence.status === 'unknown' ? 'transparent' : (presence.status === 'online' ? '#389E59' : 'gray'), border: '1.5px solid black', borderRadius: '100%', position: 'relative' ,left: -131, top: 6}}></button>
+              <button skip={""} style={{width: 32, height: 32, display: 'inline-block', background: typeof presence !== null && presence.status && presence.status === 'unknown' ? 'transparent' : (presence.status && presence.status === 'online' ? '#389E59' : 'gray'), border: '1.5px solid black', borderRadius: '100%', position: 'relative' ,left: -131, top: 6}}></button>
             </div>
             <div id="Cnt" style={{display: 'inline-block' }}>
               <h1 style={{fontSize: 45, fontWeight: 500, margin: 0, background: "linear-gradient(29deg, rgba(241,29,40,1) 0%, rgba(253,58,45,1) 25%, rgba(254,97,44,1) 50%, rgba(252,131,43,1) 75%, rgba(255,135,44,1) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Mustafa Adnan Karacabey</h1>
@@ -116,7 +116,7 @@ class HomePage extends React.Component {
                           <p>{x.description}</p>
                         </div>
                         <div className="postLink">
-                          <a href={`http://blog.${config.general.domain}/post/${x.short_url}_${x.id}`}><span className="f1"></span><span className="f2"></span></a>
+                          <a href={`http://blog.${config.general.domain}/post/${x.short_url}_${x.id}`}><span className="f1" skip={""}></span><span className="f2" skip={""}></span></a>
                         </div>
                       </div>
                     </div>
